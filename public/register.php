@@ -43,7 +43,7 @@
                     placeholder="********" >
             </div>
 
-            <button type="submit"
+            <button type="submit" name="submit"
                 class="w-full bg-blue-500 text-white py-2 rounded-lg hover:bg-blue-600 transition duration-300">
                 S'inscrire
             </button>
