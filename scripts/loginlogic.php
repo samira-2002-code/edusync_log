@@ -23,6 +23,23 @@ if (isset($_POST["login"])){
     header("Location: ../public/dashbord.php");
 }
 
+$sql = "select talamids.email,talamids.password
+from talamids ";
+
+$result = mysqli_query($conn, $sql);
+
+// $row = mysqli_fetch_assoc($result);
+while ($row = mysqli_fetch_assoc($result)) {
+    if($row['email'] == $login_email && $row['password'] == $login_password){
+    header("Location: ../public/dashbord.php");
+    exit();
+}else{
+     header("Location: ../public/login.php");
+ }
+}
+
+
+mysqli_close($conn); 
 
 
 
