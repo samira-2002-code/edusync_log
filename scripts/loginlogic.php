@@ -19,5 +19,14 @@ if (!filter_var($login_email, FILTER_VALIDATE_EMAIL)) {
     exit();
 }
 
+if (isset($_POST["login"])){
+    header("Location: ../public/dashbord.php");
+}
+
+
+
+
+
+
 
 ?>
