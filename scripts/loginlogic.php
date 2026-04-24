@@ -13,11 +13,11 @@ if ( empty($login_email) || empty($login_password)) {
    exit();
 }
 
-
-
-
-
-
+if (!filter_var($login_email, FILTER_VALIDATE_EMAIL)) {
+    header("Location: ../public/login.php?error=invalidemail");
+    
+    exit();
+}
 
 
 ?>
