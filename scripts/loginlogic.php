@@ -23,7 +23,7 @@ if (isset($_POST["login"])){
     header("Location: ../public/dashbord.php");
 }
 
-$sql = "select talamids.email,talamids.password
+$sql = "select *
 from talamids ";
 
 $result = mysqli_query($conn, $sql);
@@ -31,6 +31,7 @@ $result = mysqli_query($conn, $sql);
 // $row = mysqli_fetch_assoc($result);
 while ($row = mysqli_fetch_assoc($result)) {
     if($row['email'] == $login_email && $row['password'] == $login_password){
+         $_SESSION['name']=$row['firstname'];
     header("Location: ../public/dashbord.php");
     exit();
 }else{
