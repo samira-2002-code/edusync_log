@@ -8,9 +8,10 @@ include("../scripts/database.php");
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Lovable Dashboard</title>
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
@@ -37,10 +38,10 @@ include("../scripts/database.php");
           ⚙️ <span>Settings</span>
         </a>
         <form action="../scripts/logout.php" method="post">
-            
-            <button name="logout"  class="flex items-center gap-3 p-3 rounded-xl text-slate-600 hover:bg-slate-100 transition">
-           ⚙️ <span>logout</span>
-            </button>
+
+          <button name="logout" class="flex items-center gap-3 p-3 rounded-xl text-slate-600 hover:bg-slate-100 transition">
+            ⚙️ <span>logout</span>
+          </button>
 
         </form>
       </nav>
@@ -54,28 +55,28 @@ include("../scripts/database.php");
       <!-- Header -->
       <div class="flex justify-between items-center mb-6">
         <h2 class="text-2xl font-semibold text-slate-700">Welcome back 👋<?php
-$email = $_SESSION['login_email'];
-$sql = "SELECT firstname from talamids where email = '$email'";
+                                                                          $email = $_SESSION['login_email'];
+                                                                          $sql = "SELECT firstname from talamids where email = '$email'";
 
-$result = mysqli_query($conn , $sql);
+                                                                          $result = mysqli_query($conn, $sql);
 
-$row = mysqli_fetch_assoc($result);
-
-
-echo $row['firstname'];
+                                                                          $row = mysqli_fetch_assoc($result);
 
 
-mysqli_close($conn); 
+                                                                          echo $row['firstname'];
 
 
+                                                                          mysqli_close($conn);
 
 
 
-?></h2>
+
+
+                                                                          ?></h2>
 
         <div class="flex items-center gap-4">
           <input type="text" placeholder="Search..."
-            class="px-4 py-2 rounded-xl bg-white shadow-sm outline-none focus:ring-2 focus:ring-indigo-200"/>
+            class="px-4 py-2 rounded-xl bg-white shadow-sm outline-none focus:ring-2 focus:ring-indigo-200" />
 
           <div class="w-10 h-10 bg-indigo-200 rounded-full flex items-center justify-center">
             😊
@@ -152,4 +153,5 @@ mysqli_close($conn);
   </div>
 
 </body>
+
 </html>
