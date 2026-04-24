@@ -2,6 +2,10 @@
 session_start();
 include("../scripts/database.php");
 
+if(!isset($_SESSION['login_email'])){
+  header("location: ../public/login.php");
+  exit();
+}
 ?>
 
 
@@ -15,7 +19,6 @@ include("../scripts/database.php");
   <title>Lovable Dashboard</title>
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
-
 <body class="bg-slate-100 font-sans">
 
   <div class="flex h-screen">
